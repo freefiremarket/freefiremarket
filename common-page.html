@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>triple F club</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="./assets/img/fav/fav.png" type="image/gif" sizes="96x96">
+	<link href="https://fonts.googleapis.com/css2?family=Marcellus+SC&family=Roboto&family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/js/vegas/vegas.min.css">
+	<link rel="stylesheet" href="assets/css/button.css">
+	<link rel="stylesheet" href="assets/css/jaybar.css">
+	<link rel="stylesheet" href="assets/css/bootstrap4-modal-fullscreen.min.css">
+	<link rel="stylesheet" href="./assets/css/style.css">
+	<link rel="stylesheet" href="./assets/css/responsive.css">
+</head>
+
+<body>
+
+	<section id="common-page">
+		<div class="common-tab-nav">
+			<div class="container">
+				<div class="common-page-caption bebas text-center">
+					<div class="row">
+						<div class="col-md-6 col-sm-6 col-xs-6">
+							<div class="common-page-title">
+								<h5>Recharge</h5>
+							</div>
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-6">
+							<div class="common-page-home-button">
+								<a href="index.html">
+									<h5><span><i class='fas'>&#xf015;</i></span> Home</h5>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="common-page-tab card-glass">
+					<div class="row">
+						<div class="col-md-12 bebas">
+							<ul class="nav nav-tabs" id="myTab" role="tablist">
+								<li class="nav-item">
+									<a class="nav-link nav-link-style active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">How To Recharge</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link nav-link-style" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Number</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link nav-link-style" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Request A Recharge</a>
+								</li>
+							</ul>
+							<div class="tab-content common-page-tab-content robboto-condensed" id="myTabContent">
+								<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+									<h6><b>Step-1:</b> copy the number from the "number" tab.</h6><br>
+									<h6><b>Step-2:</b> send the amount you want to recharge to that number with a reference number</h6><br>
+									<h6><b>Step-3:</b> fill up the form in "request a recharge" tab</h6><br>
+									<h6><b>Step-4:</b> done!! your account will be recharged within the next 15 minutes. Cheers.</h6><br>
+								</div>
+								<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+									<div class="row">
+										<div class="col-md-6 col-sm-12">
+											<div class="number-bar-code">
+												<img src="assets/img/number-qr.jpg" class="img-fluid d-block mx-auto img-thumbnail">
+											</div>
+											<div class="number-caption text-center bebas">
+												<i class="fa fa-qrcode" aria-hidden="true"></i>
+											</div>
+										</div>
+										<div class="col-md-6 col-sm-12">
+											<div class="number-text bebas text-center img-thumbnail">
+												<h4 id="mobile-number">+8801755339711</h4>
+											</div>
+											<div class="copy-button">
+												<button id="copyButton"><i class="fa fa-clone" aria-hidden="true"></i> <span id="copyResult"></span></button>
+												
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+	<script>
+		var loader = document.getElementById('loader');
+
+		function closeLoader() {
+			loader.style.display = 'none';
+		}
+
+	</script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script src="assets/js/main.js"></script>
+
+	<script>
+		const answer = document.getElementById("copyResult");
+		const copy = document.getElementById("copyButton");
+		const selection = window.getSelection();
+		const range = document.createRange();
+		const textToCopy = document.getElementById("mobile-number")
+
+		copy.addEventListener('click', function(e) {
+			range.selectNodeContents(textToCopy);
+			selection.removeAllRanges();
+			selection.addRange(range);
+			const successful = document.execCommand('copy');
+			if (successful) {
+				answer.innerHTML = 'Copied!';
+			} else {
+				answer.innerHTML = 'Unable to copy!';
+			}
+			window.getSelection().removeAllRanges()
+		});
+
+	</script>
+
+</body>
+
+</html>
