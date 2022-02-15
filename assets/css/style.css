@@ -536,7 +536,6 @@ p {
 	padding: 20px 0;
 	font-size: 22px;
 	border-radius: 0;
-	min-height: 550px;
 }
 
 .nav-tabs .nav-link-style{
@@ -601,6 +600,7 @@ p {
 
 .recharge-form{
 	margin-top:  15px;
+    padding: 25px 15px;
 }
 
 .recharge-form .card{

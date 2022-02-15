@@ -41,6 +41,14 @@
 	}
 
 
+	.number-img{
+		width: 100%;
+	}
+
+	.sm-margin{
+		margin: 15px;
+	}
+
 	/*----------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 	.section-title {
@@ -187,6 +195,10 @@
 		text-decoration: none;
 		color: azure;
 	}
+
+	.number-img{
+		width: 100%;
+	}
 }
 
 @media only screen and (min-width: 576px) and (max-width: 768px) {
@@ -264,6 +276,10 @@
 	.important-link-box-mobile ul li a {
 		text-decoration: none;
 		color: azure;
+	}
+
+	.number-img{
+		width: 100%;
 	}
 }
 
