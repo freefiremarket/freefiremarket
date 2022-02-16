@@ -3,6 +3,6 @@
         "payment_method":"nogod",
         "payment_number":"+8801721567870"
     },
-    "product_type": ["uid","ingame"],
+    "product_type": ["uid"],
     "shop_time":"9am-10pm"
 }
