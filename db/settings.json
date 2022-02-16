@@ -1,8 +1,8 @@
 {
     "payment_option": {
-        "payment_method":"nogod",
+        "payment_method":"BKASH",
         "payment_number":"+8801721567870"
     },
-    "product_type": ["uid"],
+    "product_type": ["uid","ingame"],
     "shop_time":"9am-10pm"
 }
