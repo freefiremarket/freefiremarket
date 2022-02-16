@@ -1,7 +1,7 @@
 {
     "payment_option": {
         "payment_method":"bkash",
-        "payment_number":"01721567870"
+        "payment_number":"+8801721567870"
     },
     "product_type": ["uid","ingame"],
     "shop_time":"9am-10pm"

