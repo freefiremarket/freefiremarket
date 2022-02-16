@@ -8,18 +8,47 @@
             "name":"✨ 210 Diamond",
             "price":"150TK"
         },
-{
-"name":"250 Diamond",
-"price":"300"
-},
-{
-"name":"500 Diamond",
-"price":"700"
-},
-{
-"name":"1000 Diamond",
-"price":"800"
-}
 
+       {
+            "name":"✨ 310 Diamond",
+            "price": "220TK"
+        }, 
+        
+       {
+            "name":"✨ 500 Diamond",
+            "price": "380TK"
+        }, 
+        
+{
+            "name":"✨ 1000 Diamond",
+            "price": "760TK"
+        },
+        
+        {
+            "name":"✨ weekly ",
+            "price": "150TK"
+        },
+  
+    {
+            "name":"✨ Monthly ",
+            "price": "660TK"
+        },
+    
+    {
+            "name":"✨ Airdrop 90TK",
+            "price": "80TK"
+        },
+   
+    {
+            "name":"✨ Airdrop 180TK",
+            "price": "160TK"
+        },
+  
+    {
+            "name":"✨ Level up",
+            "price": "160TK"
+        }
+  
+    
     ]
 }
