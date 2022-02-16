@@ -1,0 +1,16 @@
+{
+    "products":[
+        {
+            "name":"✨ 25 Diamond",
+            "price": "20TK"
+        },
+        {
+            "name":"✨ 50 Diamond",
+            "price":"40TK"
+        },
+        {
+            "name":"✨ 100 Diamond",
+            "price":"75TK"
+        }
+    ]
+}
