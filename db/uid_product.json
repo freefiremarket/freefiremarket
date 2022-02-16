@@ -2,15 +2,61 @@
     "products":[
         {
             "name":"✨ 25 Diamond",
-            "price": "20TK"
+            "price": "25TK"
         },
         {
             "name":"✨ 50 Diamond",
-            "price":"40TK"
+            "price":"45TK"
         },
         {
             "name":"✨ 100 Diamond",
-            "price":"75TK"
+            "price":"85TK"
         }
-    ]
+        
+        {
+            "name":"✨ 210 Diamond",
+            "price": "160TK"
+        },
+  {
+            "name":"✨ 310 Diamond",
+            "price": "230TK"
+        },      
+
+{
+            "name":"✨ 520 Diamond",
+            "price": "390TK"
+        },
+
+{
+            "name":"✨ 645 Diamond",
+            "price": "510TK"
+        },
+
+{
+            "name":"✨ 1000 Diamond",
+            "price": "780TK"
+        },
+
+{
+            "name":"✨ 2200 Diamond",
+            "price": "1620TK"
+        },
+
+{
+            "name":"✨ 6900 Diamond",
+            "price": "4820TK"
+      },
+
+{
+            "name":"✨ weekly ",
+            "price": "160TK"
+        },
+
+{
+            "name":"✨ Monthly",
+            "price": "760TK"
+        }
+
+
+ ]
 }
