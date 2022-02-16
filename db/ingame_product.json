@@ -15,6 +15,11 @@
 {
 "name":"500 Diamond",
 "price":"700"
+},
+{
+"name":"1000 Diamond",
+"price":"800"
 }
+
     ]
 }
